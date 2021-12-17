@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-create-onomatopia',
@@ -7,19 +7,18 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 })
 export class CreateOnomatopiaComponent implements OnInit {
 
-  @Input()
   newOnomatopia: string = '';
 
   @Output()
-  public sendOnomatopia: EventEmitter<any> = new EventEmitter();
+  public sendOnomatopiaToParent = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  createOnomatopia(): void {
-    this.sendOnomatopia.emit(this.newOnomatopia);
+  createOnomatopia(value: string): void {
+    this.sendOnomatopiaToParent.emit(value);
   }
 
 }

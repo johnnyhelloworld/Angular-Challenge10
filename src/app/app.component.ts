@@ -8,12 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'onomatopia';
 
-  public onomatopeias: string[] = [];
+  public onomatopeias: Array<string> = [];
 
-  public newOnomatopia: string = '';
-
-  onReceiveNewOnomatopia($event: string[]) {
-    console.log($event);
-    this.onomatopeias = $event;
+  onReceiveNewOnomatopia(newItem: string) {
+    this.onomatopeias.push(newItem);
   }
 }

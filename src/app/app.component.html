@@ -7,15 +7,13 @@
   </li>
 </ul>
 
-<router-outlet></router-outlet>
+<app-create-onomatopia
+(sendOnomatopiaToParent)="onReceiveNewOnomatopia($event)">
+</app-create-onomatopia>
 
 <ul>
-  <li *ngFor="let oneOnomatopia of onomatopeias">
-    {{ onomatopeias }}
+  <li *ngFor="let item of onomatopeias">
+    {{ item }}
   </li>
 </ul>
 
-<app-create-onomatopia
-[newOnomatopia]="newOnomatopia"
-(sendOnomatopia)="onReceiveNewOnomatopia($event)">
-</app-create-onomatopia>
