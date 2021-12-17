@@ -1,0 +1,21 @@
+<ul>
+  <li>
+    <a [routerLink]="['']">LIST OF ONOMATOPOEIAS</a>
+  </li>
+  <li>
+    <a [routerLink]="['/create-onomatopia']">CREATE AN ONOMATOPOEIA</a>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>
+
+<ul>
+  <li *ngFor="let oneOnomatopia of onomatopeias">
+    {{ onomatopeias }}
+  </li>
+</ul>
+
+<app-create-onomatopia
+[newOnomatopia]="newOnomatopia"
+(sendOnomatopia)="onReceiveNewOnomatopia($event)">
+</app-create-onomatopia>
