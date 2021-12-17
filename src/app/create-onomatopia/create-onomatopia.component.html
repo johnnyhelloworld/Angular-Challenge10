@@ -1,0 +1,7 @@
+<form>
+  <div class="mb-3">
+    <label for="onomatopia" class="form-label">Say something:</label>
+    <input type="text" class="form-control" id="onomatopia" #newItem/>
+  </div>
+  <button (click)="createOnomatopia(newItem.value)" class="btn btn-primary">Create an onomatopoeia</button>
+</form>
